@@ -26,4 +26,5 @@ sentiment-analysis/
 │   └── styles.css
 └── templates/
     └── index.html
+    └── result.html
 ```
