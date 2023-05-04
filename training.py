@@ -42,4 +42,7 @@ model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy']
 # Train the model
 model.fit(train_sequences_padded, train_data['sentiment'].values, batch_size=64, epochs=5, validation_split=0.2)
 
+with open('tokenizer.pkl', 'wb') as handle:
+    pickle.dump(tokenizer, handle, protocol=pickle.HIGHEST_PROTOCOL)
+
 model.save('model.h5')
