@@ -36,8 +36,7 @@ sentiment-analysis/
     └── result.html
 ```
 ### Separately run this code in a .py file to save the tokenizer and dump as pickle format
-```
-import pickle
+
 
 # save tokenizer object as a pickle file when training before saving the model
 ```
