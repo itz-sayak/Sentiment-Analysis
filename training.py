@@ -42,21 +42,4 @@ model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy']
 # Train the model
 model.fit(train_sequences_padded, train_data['sentiment'].values, batch_size=64, epochs=5, validation_split=0.2)
 
-@app.route('/')
-def home():
-    return render_template('index.html')
-
-@app.route('/predict', methods=['POST'])
-def predict():
-    review = request.form['review']
-    review_sequence = tokenizer.texts_to_sequences([review])
-    review_sequence_padded = pad_sequences(review_sequence, maxlen=100)
-    sentiment_prediction = model.predict(review_sequence_padded)
-    if sentiment_prediction > 0.5:
-        sentiment = 'Positive'
-    else:
-        sentiment = 'Negative'
-    return render_template('result.html', sentiment=sentiment)
-
-if __name__ == '__main__':
-    app.run(debug=True)
+model.save('model.h5')
