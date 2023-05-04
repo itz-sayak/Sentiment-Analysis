@@ -1,4 +1,6 @@
 # Sentiment-Analysis
+This project is a web application that allows users to enter movie reviews, and the application will predict whether the reviews are positive or negative.
+
 ## DATASET
 The IMDB movie reviews dataset is available on the following website:
 
@@ -35,10 +37,25 @@ sentiment-analysis/
     └── index.html
     └── result.html
 ```
-### Separately run this code in a .py file to save the tokenizer and dump as pickle format
+#### app.py: 
+This file contains the Flask application that serves the web pages and makes predictions using the trained model.
+#### model.h5: 
+This file contains the trained RNN model that is used to make predictions on new reviews.
+#### tokenizer.pickle: 
+This file contains the tokenizer object that is used to preprocess the text data before feeding it to the model.
+#### templates/:
+This folder contains the HTML templates for the web pages served by the Flask application.
+#### static/:
+This folder contains the CSS file for styling the HTML templates.
 
+## MODEL ARCHITECTURE
+The RNN model architecture used in this project is a bidirectional LSTM with two layers of LSTM cells and a dense output layer with a sigmoid activation function. The model takes in sequences of integers representing words and outputs a binary classification result (positive or negative sentiment).
+It  uses dropout layers too to prevent overfitting.
 
-# save tokenizer object as a pickle file when training before saving the model
+## REST API
+This project includes a simple REST API that can be used to make predictions programmatically. The API has a single endpoint (/predict) that accepts a JSON object containing a single key (text) with the movie review text. The API returns a JSON object with a single key (sentiment) that is either "positive" or "negative".
+
+### save tokenizer object as a pickle file when training before saving the model
 ```
 with open('tokenizer.pkl', 'wb') as handle:
     pickle.dump(tokenizer, handle, protocol=pickle.HIGHEST_PROTOCOL)
