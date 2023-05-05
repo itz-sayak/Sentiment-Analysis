@@ -3,7 +3,9 @@ This project is a web application that allows users to enter movie reviews, and 
 
 ## DATASET
 The IMDB movie reviews dataset is available on the following website:
+https://www.kaggle.com/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews
 
+for more info. about the dataset see...
 http://ai.stanford.edu/~amaas/data/sentiment/
 
 The dataset consists of 50,000 movie reviews, with 25,000 reviews for training and 25,000 reviews for testing. Each review is labeled as positive or negative, and the dataset is evenly balanced between positive and negative reviews. You can download the dataset in a compressed format, and extract it using a zip utility. Once extracted, you should see separate folders for the training and testing data, each containing subfolders for positive and negative reviews.
