@@ -7,7 +7,6 @@ from tensorflow.keras.models import Model
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
-app = Flask(__name__)
 
 # Load the dataset
 df = pd.read_csv('imdb_reviews.csv')
