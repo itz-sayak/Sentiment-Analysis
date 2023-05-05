@@ -57,7 +57,8 @@ It  uses dropout layers too to prevent overfitting.
 ## REST API
 This project includes a simple REST API that can be used to make predictions programmatically. The API has a single endpoint (/predict) that accepts a JSON object containing a single key (text) with the movie review text. The API returns a JSON object with a single key (sentiment) that is either "positive" or "negative".
 To use the API, make a POST request to http://localhost:5000/predict with the following JSON body:
-```{
+```
+{
     "text": "This movie was really great. I loved it!"
 }
 ```
@@ -67,3 +68,5 @@ To use the API, make a POST request to http://localhost:5000/predict with the fo
 with open('tokenizer.pkl', 'wb') as handle:
     pickle.dump(tokenizer, handle, protocol=pickle.HIGHEST_PROTOCOL)
 ```
+## Credits
+This project was created by me. The dataset used for training the model was obtained from Kaggle.
